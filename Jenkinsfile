@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('clone repository') {
       steps {
-        shell '''java -version
+        bat '''java -version
             mvn --version
             git --version'''
       }
@@ -17,7 +17,7 @@ pipeline {
                         variable: 'api_token'
                     )
                 ]) {
-                    shell '''
+                    bat '''
                         @echo off
                         echo Verificando conexion con Kubernetes...
 
